@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { ThemeProvider } from '@/components/providers/theme-provider'
+import { ConvexClientProvider } from '@/components/providers/convex-provider'
 
 export const metadata: Metadata = {
   title: 'AlNote',
@@ -29,9 +30,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <ThemeProvider attribute='class' defaultTheme='system' enableSystem disableTransitionOnChange storageKey='alnote-theme'>
-          {children}
-        </ThemeProvider>
+        <ConvexClientProvider>
+          <ThemeProvider attribute='class' defaultTheme='system' enableSystem disableTransitionOnChange storageKey='alnote-theme'>
+            {children}
+          </ThemeProvider>
+        </ConvexClientProvider>
       </body>
     </html>
   )

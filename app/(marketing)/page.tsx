@@ -1,7 +1,17 @@
-import Image from 'next/image'
+import Footer from "./_components/Footer";
+import Heading from "./_components/Heading";
+import Heroes from "./_components/Heroes";
 
-export default function Home() {
+const Marketing = () => {
   return (
-    <p className='text-red-600'>Hello everybody</p>
-  )
+    <div className="min-h-full flex flex-col dark:bg-[#1F1F1F]">
+      <div className="flex flex-col items-center justify-center md:justify-start text-center gap-y-8 flex-1 px-6 pb-10">
+        <Heading />
+        <Heroes />
+        <Footer />
+      </div>
+    </div>
+  );
 }
+
+export default Marketing;
